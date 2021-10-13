@@ -13,7 +13,7 @@
             android:name=".AddProduct.AddProduct"
             android:exported="true" />
         <activity
-            android:name=".Products"
+            android:name=".ProductsList.ProductsList"
             android:exported="true" />
         <activity
             android:name=".MainActivity.MainActivity"
