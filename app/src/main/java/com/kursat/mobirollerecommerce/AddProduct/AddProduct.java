@@ -13,8 +13,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.kursat.mobirollerecommerce.R;
 import com.kursat.mobirollerecommerce.util.Categories;
 
-import java.util.Locale;
-
 public class AddProduct extends AppCompatActivity implements AddProductView{
     EditText edtTxt_title,edtTxt_explanation,edtTxt_price;
     Button btn_push;
