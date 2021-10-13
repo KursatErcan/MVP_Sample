@@ -10,7 +10,6 @@ import com.kursat.mobirollerecommerce.R;
 
 public class MainActivity extends AppCompatActivity implements MainView{
     Button btn_addProduct,btn_showProducts;
-    //View mView;
     MainPresenter presenter;
 
     @Override
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements MainView{
     private void initView(){
         btn_addProduct =findViewById(R.id.btn_addProduct);
         btn_showProducts =findViewById(R.id.btn_showProducts);
-        //mView = findViewById(R.id.mainView);
         presenter = new MainPresenterImpl(this);
     }
 
