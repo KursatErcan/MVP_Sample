@@ -4,4 +4,6 @@
     <string name="input_not_valid">Data not valid, please check again</string>
     <string name="input_error">Failed to add</string>
     <string name="input_succes">Succesfuly added</string>
+    <string name="fetch_error">Failed to fetch</string>
+
 </resources>

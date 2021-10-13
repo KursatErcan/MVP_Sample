@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobirollerECommerce">
         <activity
-            android:name=".AddProduct.AddProduct"
+            android:name=".AddProduct.AddProductActivity"
             android:exported="true" />
         <activity
-            android:name=".ProductsList.ProductsList"
+            android:name=".ProductsList.ProductsListActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity.MainActivity"

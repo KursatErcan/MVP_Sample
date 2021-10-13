@@ -13,40 +13,33 @@ import com.google.firebase.database.ValueEventListener;
 import com.kursat.mobirollerecommerce.Model.Product;
 import com.kursat.mobirollerecommerce.util.Constant;
 
-public class AddProductPresenterImpl implements AddProductPresenter{
-    private final AddProductView view;
-
+public class AddProductActivityPresenter implements AddProductActivityContract.Presenter, AddProductActivityContract.onOperationListener{
+    private final AddProductActivityContract.View view;
+    private final AddProductActivityContract.Interactor interactor;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
-    public AddProductPresenterImpl(AddProductView addProductView){ this.view =addProductView; }
+    DatabaseReference myRef = database.getReference().child(Constant.DB_NAME);
+    public AddProductActivityPresenter(AddProductActivityContract.View addProductActivityView){
+        this.view =addProductActivityView;
+        interactor = (AddProductActivityContract.Interactor) new AddProductActivityInteractor(this);
+    }
 
     @Override
     public void push(String category,String title, String description, String price) {
         if(TextUtils.isEmpty(category) || TextUtils.isEmpty(title) || TextUtils.isEmpty(description) || TextUtils.isEmpty(price)){
-            view.showInputError();
+            onError();
         }
         else{
             Product product = new Product(category,title,description,price);
-
-            myRef.child(Constant.DB_NAME).child(product.getId()).setValue(product.toHashMap());
-            myRef.push();
-
-            myRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    view.pushSuccess();
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    view.pushError();
-                    Log.e("onCancelled: ", error.toString());
-
-                }
-            });
-
-
+            interactor.createProduct(myRef,product);
         }
     }
 
+    @Override
+    public void onSuccess() { view.pushSuccess(); }
+
+    @Override
+    public void onFailure() { view.pushFailure(); }
+
+    @Override
+    public void onError() { view.showInputError();}
 }

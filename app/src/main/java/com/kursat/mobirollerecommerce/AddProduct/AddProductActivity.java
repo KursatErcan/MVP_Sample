@@ -1,7 +1,5 @@
 package com.kursat.mobirollerecommerce.AddProduct;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -9,15 +7,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.kursat.mobirollerecommerce.R;
 import com.kursat.mobirollerecommerce.util.Categories;
 
-public class AddProduct extends AppCompatActivity implements AddProductView{
+public class AddProductActivity extends AppCompatActivity implements AddProductActivityContract.View {
     EditText edtTxt_title,edtTxt_explanation,edtTxt_price;
     Button btn_push;
     Spinner spinner_category;
-    AddProductPresenter presenter;
+    AddProductActivityPresenter presenter;
     View mView;
     private ArrayAdapter<String> dataAdapterForCategories;
     @Override
@@ -43,7 +43,7 @@ public class AddProduct extends AppCompatActivity implements AddProductView{
         dataAdapterForCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_category.setAdapter(dataAdapterForCategories);
 
-        presenter = new AddProductPresenterImpl(this);
+        presenter = new AddProductActivityPresenter(this);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class AddProduct extends AppCompatActivity implements AddProductView{
     }
 
     @Override
-    public void pushError() {
+    public void pushFailure() {
         Snackbar.make(mView,getResources().getString(R.string.input_error),Snackbar.LENGTH_SHORT).show();
 
     }

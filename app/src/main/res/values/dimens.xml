@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_radius">14dp</dimen>
+    <dimen name="normalPadding">20dp</dimen>
+    <dimen name="top_text_card">7dp</dimen>
+    <dimen name="horizontal_dashboard">32dp</dimen>
+</resources>
