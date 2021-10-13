@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "572600363308",
+    "project_id": "mobiroller-d39b7",
+    "storage_bucket": "mobiroller-d39b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572600363308:android:1c76a22af840f5c61f6489",
+        "android_client_info": {
+          "package_name": "com.kursat.mobirollerecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572600363308-32h61vnj94s7mgfegoo6mgb0fco1gj6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwqKkR3npb9LUjSHc0w9m55N1Jlp5vKsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572600363308-32h61vnj94s7mgfegoo6mgb0fco1gj6s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
