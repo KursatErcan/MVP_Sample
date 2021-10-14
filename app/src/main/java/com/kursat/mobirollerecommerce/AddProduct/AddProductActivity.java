@@ -19,7 +19,7 @@ public class AddProductActivity extends AppCompatActivity implements AddProductA
     Spinner spinner_category;
     AddProductActivityPresenter presenter;
     View mView;
-    private ArrayAdapter<String> dataAdapterForCategories;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class AddProductActivity extends AppCompatActivity implements AddProductA
         spinner_category=findViewById(R.id.spinner_category);
         mView = findViewById(R.id.addProductView);
 
-        dataAdapterForCategories =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Categories.titles);
+        ArrayAdapter<String> dataAdapterForCategories = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Categories.titles);
         dataAdapterForCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_category.setAdapter(dataAdapterForCategories);
 

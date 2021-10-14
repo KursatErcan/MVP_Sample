@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/productsListView"
+    android:focusable="false"
     tools:context=".ProductsList.ProductsListActivity">
 
     <androidx.core.widget.NestedScrollView

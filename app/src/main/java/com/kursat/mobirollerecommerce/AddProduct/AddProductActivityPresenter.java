@@ -13,6 +13,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.kursat.mobirollerecommerce.Model.Product;
 import com.kursat.mobirollerecommerce.util.Constant;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class AddProductActivityPresenter implements AddProductActivityContract.Presenter, AddProductActivityContract.onOperationListener{
     private final AddProductActivityContract.View view;
     private final AddProductActivityContract.Interactor interactor;
@@ -24,12 +27,12 @@ public class AddProductActivityPresenter implements AddProductActivityContract.P
     }
 
     @Override
-    public void push(String category,String title, String description, String price) {
+    public void push(String category, String title, String description, String price) {
         if(TextUtils.isEmpty(category) || TextUtils.isEmpty(title) || TextUtils.isEmpty(description) || TextUtils.isEmpty(price)){
             onError();
         }
         else{
-            Product product = new Product(category,title,description,price);
+            Product product = new Product(category,title,description,Float.parseFloat(price),new Date());
             interactor.createProduct(myRef,product);
         }
     }
