@@ -25,21 +25,22 @@ public class AddProductActivity extends AppCompatActivity implements AddProductA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_products);
         initView();
-        btn_push.setOnClickListener(view -> {
-            presenter.push(spinner_category.getSelectedItem().toString(), edtTxt_title.getText().toString(),
-                    edtTxt_explanation.getText().toString(),
-                    edtTxt_price.getText().toString());
-        });
+        btn_push.setOnClickListener(view ->
+                presenter.push(spinner_category.getSelectedItem().toString(),
+                        edtTxt_title.getText().toString(),
+                edtTxt_explanation.getText().toString(),
+                edtTxt_price.getText().toString()));
     }
     private void initView(){
         edtTxt_title =findViewById(R.id.edtTxt_title);
-        edtTxt_explanation =findViewById(R.id.edtTxt_explanation);
+        edtTxt_explanation =findViewById(R.id.edtTxt_description);
         edtTxt_price =findViewById(R.id.edtTxt_price);
         btn_push =findViewById(R.id.btn_push);
         spinner_category=findViewById(R.id.spinner_category);
         mView = findViewById(R.id.addProductView);
 
-        ArrayAdapter<String> dataAdapterForCategories = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Categories.titles);
+        ArrayAdapter<String> dataAdapterForCategories = new ArrayAdapter<>(
+                this, android.R.layout.simple_spinner_item, Categories.titles);
         dataAdapterForCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_category.setAdapter(dataAdapterForCategories);
 
@@ -49,19 +50,13 @@ public class AddProductActivity extends AppCompatActivity implements AddProductA
     @Override
     public void showInputError() {
         Snackbar.make(mView,getResources().getString(R.string.input_not_valid),Snackbar.LENGTH_SHORT).show();
-
     }
 
     @Override
     public void pushSuccess() {
         Snackbar.make(mView,getResources().getString(R.string.input_succes),Snackbar.LENGTH_SHORT).show();
-
-
-    }
-
-    @Override
-    public void pushFailure() {
-        Snackbar.make(mView,getResources().getString(R.string.input_error),Snackbar.LENGTH_SHORT).show();
-
+        edtTxt_title.setText("");
+        edtTxt_explanation.setText("");
+        edtTxt_price.setText("");
     }
 }

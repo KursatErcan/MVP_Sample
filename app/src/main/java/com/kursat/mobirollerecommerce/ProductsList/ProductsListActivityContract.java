@@ -7,26 +7,34 @@ import java.util.ArrayList;
 
 public class ProductsListActivityContract {
     interface View {
-        void onProductRead(ArrayList<Product>players);
-        void onProductUpdate(Product player);
-        void onProductDelete(Product player);
+        void onProductRead(ArrayList<Product>products);
+        void onProductUpdate(Product product, int index);
+        void onProductDelete(Product product,int index);
 
-        void fetchFailure();
+        void onProductsRefreshed(ArrayList<Product>products);
+        void onFailure();
     }
     interface Presenter {
-        void fetchProducts();
+        void updateProduct(Product product);
+        void deleteProduct(Product product);
+        void fetchProducts(String sortType);
+        void refreshRecyclerView(String sortType);
+
     }
 
     interface Interactor {
-        void readProducts(DatabaseReference dbRef);
-        void updateProduct(DatabaseReference dbRef);
-        void deleteProduct(DatabaseReference dbRef);
+        void readProducts(DatabaseReference dbRef,String sortType);
+        void updateProduct(DatabaseReference dbRef,Product product);
+        void deleteProduct(DatabaseReference dbRef,Product product);
+        void sortProductsList(String sortType);
     }
     interface onOperationListener{
+        void onRefreshed(ArrayList<Product> products);
         void onRead(ArrayList<Product> products);
-        void onUpdate(Product product);
-        void onDelete(Product product);
+        void onUpdate(Product product, int index);
+        void onDelete(Product product,int index);
         void onFailure();
+
 
     }
 }

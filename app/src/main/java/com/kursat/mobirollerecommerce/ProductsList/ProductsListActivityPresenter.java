@@ -19,8 +19,28 @@ public class ProductsListActivityPresenter implements ProductsListActivityContra
     }
 
     @Override
-    public void fetchProducts() {
-        interactor.readProducts(myRef);
+    public void updateProduct(Product product) {
+        interactor.updateProduct(myRef,product);
+    }
+
+    @Override
+    public void deleteProduct(Product product) {
+        interactor.deleteProduct(myRef,product);
+    }
+
+    @Override
+    public void fetchProducts(String sortType) {
+        interactor.readProducts(myRef,sortType);
+    }
+
+    @Override
+    public void refreshRecyclerView(String sortType) {
+        interactor.sortProductsList(sortType);
+    }
+
+    @Override
+    public void onRefreshed(ArrayList<Product> products) {
+        view.onProductsRefreshed(products);
     }
 
     @Override
@@ -29,14 +49,14 @@ public class ProductsListActivityPresenter implements ProductsListActivityContra
     }
 
     @Override
-    public void onUpdate(Product product) {
-        view.onProductUpdate(product);
+    public void onUpdate(Product product,int index) {
+        view.onProductUpdate(product,index);
     }
 
     @Override
-    public void onDelete(Product product) {
-        view.onProductUpdate(product);
+    public void onDelete(Product product,int index) {
+        view.onProductDelete(product,index);
     }
     @Override
-    public void onFailure() { view.fetchFailure(); }
+    public void onFailure() { view.onFailure(); }
 }

@@ -1,5 +1,7 @@
 package com.kursat.mobirollerecommerce.util;
 
+import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kursat.mobirollerecommerce.Model.Product;
@@ -28,28 +31,22 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.item_product,parent,false);
-        ViewHolder pHolder = new ViewHolder(view, listener);
-
-        return pHolder;
+        return new ViewHolder(view, listener);
     }
-
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product item = products.get(position);
         holder.title.setText(item.getTitle());
-        holder.price.setText(String.valueOf(item.getPrice()));
+        holder.price.setText(String.valueOf(item.getPrice())+" TL");
     }
-
-
 
     @Override
     public int getItemCount() {
         return products.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView title;
         public TextView price;
@@ -64,22 +61,32 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
             price = (TextView) itemView.findViewById(R.id.tv_itemProductPrice);
             updateBtn = itemView.findViewById(R.id.tv_updateProduct);
             deleteBtn = itemView.findViewById(R.id.tv_deleteProduct);
+            CardView productItem = itemView.findViewById(R.id.product_item);
 
             updateBtn.setOnClickListener(this);
+            deleteBtn.setOnClickListener(this);
+            productItem.setOnClickListener(this);
 
         }
 
-        //post
-
+        @SuppressLint("NonConstantResourceId")
         @Override
         public void onClick(View view) {
             switch(view.getId()){
+                case R.id.product_item:
+                    Log.e("recyclerAdapter: ", "item clicked");
+                    pListener.onProductItemClick(getAdapterPosition());
+                    break;
                 case R.id.tv_updateProduct:
+                    Log.e("recyclerAdapter: ", "update clicked");
                     pListener.onProductUpdateClick(getAdapterPosition());
                     break;
+
                 case R.id.tv_deleteProduct:
+                    Log.e("recyclerAdapter: ", "delete clicked");
                     pListener.onProductDeleteClick(getAdapterPosition());
                     break;
+
             }
         }
     }
@@ -87,5 +94,6 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
     public interface onProductListener{
         void onProductUpdateClick(int position);
         void onProductDeleteClick(int position);
+        void onProductItemClick(int position);
     }
 }

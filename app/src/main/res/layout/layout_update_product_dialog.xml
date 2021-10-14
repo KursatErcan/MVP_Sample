@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:id="@+id/addProductView"
     android:background="@color/mainBodyColor"
     tools:context=".AddProduct.AddProductActivity"
@@ -11,30 +12,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normalPadding"
         android:layout_marginTop="@dimen/normalPadding"
         android:layout_marginEnd="@dimen/normalPadding"
-        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/bariol_regular"
             android:text="Product Title"
             android:textColor="@color/titleTextColor"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edtTxt_title"
+            android:id="@+id/edtTxt_updateTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title"
-            android:fontFamily="@font/bariol_regular"
+            android:layout_gravity="start"
             android:background="@color/contentBodyColor"
+            android:fontFamily="@font/bariol_regular"
+            android:hint="Title"
             android:inputType="text"
             android:maxLines="1" />
 
@@ -49,16 +50,18 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edtTxt_description"
+            android:id="@+id/edtTxt_updateDescription"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:hint="Description"
+            android:layout_gravity="start"
+
+            android:background="@color/contentBodyColor"
             android:fontFamily="@font/bariol_regular"
 
-            android:singleLine="false"
-            android:background="@color/contentBodyColor"
-
+            android:hint="Description"
             android:inputType="textMultiLine"
+
+            android:singleLine="false"
 
             />
 
@@ -68,26 +71,32 @@
             android:layout_gravity="start"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/bariol_regular"
-            android:text="Product Price"
+            android:text="Product Price (TL)"
             android:textColor="@color/titleTextColor"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edtTxt_price"
+            android:id="@+id/edtTxt_updatePrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Price"
+            android:background="@color/contentBodyColor"
             android:fontFamily="@font/bariol_regular"
 
-            android:singleLine="true"
-            android:background="@color/contentBodyColor"
+            android:hint="Price"
+            android:inputType="numberDecimal"
 
-            android:inputType="numberDecimal" />
-
+            android:singleLine="true" />
+        <!--
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:layout_marginTop="40dp"
+
             android:orientation="horizontal">
 
             <TextView
@@ -99,25 +108,73 @@
                 android:textColor="@color/titleTextColor"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinner_category"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_updateCategory"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:background="@color/contentBodyColor"
                 android:fontFamily="@font/bariol_regular"
+                android:hint="Product Category"
 
-                tools:ignore="DuplicateIds"
-                />
+                tools:ignore="DuplicateIds" />
+
 
         </LinearLayout>
 
+
         <Button
-            android:id="@+id/btn_push"
+            android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:text="Push" />
+            android:text="Save" />
     </LinearLayout>
 
+
 </RelativeLayout>
+<!--
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:focusable="true">
+
+    <EditText
+        android:id="@+id/edtTxt_updateTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/edtTxt_updateDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Explanation"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtTxt_updatePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="numberDecimal" />
+
+    <Spinner
+        android:id="@+id/spinner_updateCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save" />
+</LinearLayout>
+
+
+-->

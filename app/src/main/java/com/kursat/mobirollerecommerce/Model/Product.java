@@ -3,33 +3,45 @@ package com.kursat.mobirollerecommerce.Model;
 import com.kursat.mobirollerecommerce.util.Constant;
 
 import java.util.HashMap;
-import java.util.UUID;
 
 public class Product {
-    private String id;
+    private String key;
     private String title;
     private String description;
-    private String price;
+    private float price;
     private String category;
+    private String date;
+    public String getDate() {
+        return date;
+    }
 
     public Product(){}
 
-    public Product(String category, String title, String description, String price) {
-        this.id = UUID.randomUUID().toString();;
+    public Product(String category, String title, String description, float price,String date) {
+        this.date = date;
         this.category = category;
         this.title = title;
         this.description = description;
         this.price = price;
     }
-    public String getId() {
-        return id;
+    public Product(String key,String category, String title, String description, float price, String date) {
+        this.key = key;
+        this.date = date;
+        this.category = category;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+
+    }
+    public String getKey() {
+        return key;
     }
 
     public String getTitle() { return title; }
 
     public String getDescription() { return description; }
 
-    public String getPrice() { return price; }
+    public float getPrice() { return price; }
 
     public String getCategory() { return category; }
 
@@ -39,10 +51,9 @@ public class Product {
         mData.put(Constant.KEY_TITLE,title);
         mData.put(Constant.KEY_DESCRIPTION,description);
         mData.put(Constant.KEY_PRICE,price);
+        mData.put(Constant.KEY_DATE, date);
 
         return mData;
-
     }
 
-    //String uniqueID = UUID.randomUUID().toString();
 }

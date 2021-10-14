@@ -9,7 +9,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="mainBodyColor">#FCFCFC</color>
-    <color name="contentBodyColor">#FFD4D4</color>
+    <color name="cardBodyColor">#FFD4D4</color>
+    <color name="contentBodyColor">#E3E3E3</color>
+
+    <color name="priceTextColor">#FF0F0F</color>
     <color name="titleTextColor">#020000</color>
-    <color name="explainTextColor">#272727</color>
+    <color name="textColor">#272727</color>
 </resources>

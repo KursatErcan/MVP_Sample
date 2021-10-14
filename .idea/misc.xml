@@ -4,14 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/SDK/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.1" />
-        <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/activity_add_products.xml" value="0.17272727272727273" />
+        <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/activity_add_products.xml" value="0.264" />
         <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/activity_add_products1.xml" value="0.1" />
         <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/activity_list_products.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/activity_list_products1.xml" value="0.1" />
         <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/activity_products.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/item_product.xml" value="0.264" />
-        <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/layout_update_product_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/layout_detail_product_dialog.xml" value="0.3602941176470588" />
+        <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/layout/layout_update_product_dialog.xml" value="0.152" />
         <entry key="..\:/Users/Kursat/Desktop/MobirollerECommerce/app/src/main/res/menu/action_bar_sort_spinner_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Kursat/Desktop/MyApplication/app/src/main/res/layout/activity_add_products.xml" value="0.264" />
         <entry key="..\:/Users/Kursat/Desktop/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />

@@ -5,5 +5,23 @@
     <string name="input_error">Failed to add</string>
     <string name="input_succes">Succesfuly added</string>
     <string name="fetch_error">Failed to fetch</string>
+    <string name="deleted_product">Succesfuly deleted product</string>
+    <string name="updated_product">Succesfuly updated product</string>
 
+
+    <string name="cheapest">Cheapest</string>
+    <string name="expensive">Expensive</string>
+    <string name="newest">Newest</string>
+    <string name="oldest">Oldest</string>
+    <string name="delete"><u>Delete</u></string>
+    <string name="update"><u>Update</u></string>
+    <string name="save">Save</string>
+
+    <string-array name="spinner_list_item_array">
+        <item>@string/cheapest</item>
+        <item>@string/expensive</item>
+        <item>@string/newest</item>
+        <item>@string/oldest</item>
+
+    </string-array>
 </resources>
