@@ -34,16 +34,6 @@ public class ProductsListActivityPresenter implements ProductsListActivityContra
     }
 
     @Override
-    public void refreshRecyclerView(String sortType) {
-        interactor.sortProductsList(sortType);
-    }
-
-    @Override
-    public void onRefreshed(ArrayList<Product> products) {
-        view.onProductsRefreshed(products);
-    }
-
-    @Override
     public void onRead(ArrayList<Product> products) {
         view.onProductRead(products);
     }

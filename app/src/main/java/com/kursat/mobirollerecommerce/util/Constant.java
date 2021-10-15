@@ -8,6 +8,11 @@ public class Constant {
     public static final String KEY_DESCRIPTION = "description";
     public static final String KEY_PRICE = "price";
     public static final String KEY_DATE = "publis_date";
+
+    public static final String SORT_BY_NOTHING = "nothing";
+    public static final String SORT_BY_PRICE = "price";
+    public static final String SORT_BY_DATE = "date";
+
 }
 
 
