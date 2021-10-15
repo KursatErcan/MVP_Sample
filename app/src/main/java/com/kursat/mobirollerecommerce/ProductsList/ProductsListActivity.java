@@ -35,8 +35,6 @@ public class ProductsListActivity extends AppCompatActivity implements ProductsL
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        products.clear();
-
         this.finish();
     }
 
