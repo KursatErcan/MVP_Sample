@@ -1,3 +1,3 @@
 # MobirollerECommerce
 
-Developed using the MVC design pattern
+Developed using the MVP design pattern
